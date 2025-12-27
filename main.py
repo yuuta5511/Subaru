@@ -3,7 +3,6 @@ import sys
 import asyncio
 import logging
 from typing import List, Dict
-from keep_alive import keep_alive
 from scheduler import start_scheduler
 from downloader import MangaDownloader, GoogleDriveUploader, get_skip_value_from_sheet, clean_filename
 
@@ -476,7 +475,6 @@ if __name__ == "__main__":
         sys.exit()
 
     try:
-        keep_alive()
         bot.run(BOT_TOKEN)
     except Exception as e:
         logger.error(f"Bot error: {e}", exc_info=True)
